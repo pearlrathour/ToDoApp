@@ -1,0 +1,26 @@
+<%- include("header") -%> 
+
+    <!-- <% if(dayname==="Sunday" || dayname==="Thursday"){ %>
+        <h1 style="color: dodgerblue;"><%= dayname %> List</h1>
+    <%} else{ %>
+        <h1 style="color: chartreuse;"><%= dayname %> List</h1>
+    <%} %>    -->
+
+    <div class="box" id="heading">
+        <h1><%= dayname %></h1>
+    </div>
+
+    <div class="box">
+        <% for(var i=0; i<newtaskitem.length; i++){%>
+            <div class="item">
+                <input type="checkbox">
+                <p><%= newtaskitem[i] %></p>
+            </div>
+        <%}%>
+        <form class="" action="/" method="post">
+            <input type="text" name="newtask" placeholder="Enter New Task">
+            <button type="submit" name="submit">+</button>
+        </form>
+    </div>
+
+    <%- include("footer") -%>  
