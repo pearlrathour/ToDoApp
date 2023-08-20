@@ -2,6 +2,7 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 const date = require(__dirname + "/date.js");
+const { endpoint, Port } = require('./config');
 
 console.log(date);
 
@@ -11,8 +12,7 @@ app.use(bodyParser.json());
 app.use(express.static("public"));
 app.set('view engine', 'ejs');
 
-// const db = process.env.Dblink;
-db= "mongodb+srv://pearlrathour:pR%4007142002@cluster0.wzyeuro.mongodb.net/todolistdb?retryWrites=true&w=majority"
+db= process.env.DB_URL
 
 mongoose.connect(db).then( () =>{
     console.log("Conn succ");
@@ -91,4 +91,4 @@ app.post("/del", function(req, res){
         });
 });
 
-app.listen(4000);
+app.listen(process.env.Port);
