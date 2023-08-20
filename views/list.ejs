@@ -6,25 +6,33 @@
         <h1 style="color: chartreuse;"><%= dayname %> List</h1>
     <%} %>    -->
 
-    <div class="box" id="heading">
-        <h1><%= dayname %></h1>
+    <div class="headingbox" id="heading">
+        <h1>Don't be lazy!! Start Today</h1>
+        <h3><%= dayname %></h3>
     </div>
 
-    <div class="box">
-
-        <% newtaskitem.forEach(function(task){ %>
-            <form action="/del" method="post">
-                <div class="item">
-                    <input type="checkbox" name="checkbox" value="<%= task._id%>" onChange="this.form.submit()">
-                    <p><%= task.name %></p>
-                </div>
+    <div class="outerbox">
+        <div class="box">
+            <form class="" action="/" method="post">
+                <input type="text" name="newtask" placeholder="Enter New Task" required>
+                <input type="text" name="motivationtext" placeholder="Motivation Text">
+                <button type="submit" name="submit">+</button>
             </form>
-            <% }); %>
 
-                <form class="" action="/" method="post">
-                    <input type="text" name="newtask" placeholder="Enter New Task" required>
-                    <button type="submit" name="submit">+</button>
+            <% newtaskitem.forEach(function(task){ %>
+                <form action="/del" method="post">
+                    <div class="item">
+                        <input type="checkbox" name="checkbox" value="<%= task._id%>" onChange="this.form.submit()">
+                        <div class="task">
+                            <p><%= task.name %></p>
+                            <p class="motivation"><%= task.motivation %></p>
+                        </div>
+                    </div>
                 </form>
+                <hr>
+                <% }); %>
+
+        </div>
     </div>
 
     <%- include("footer") -%>

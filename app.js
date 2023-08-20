@@ -22,24 +22,14 @@ const taskSchema = new mongoose.Schema({
     name: {
         type: String,
         required: [true, "Please check your data entry, no name specified !"]
+    },
+    motivation: {
+        type: String,
+        default: "Do not postpone"
     }
 });
 
 const Task = mongoose.model("tasks", taskSchema);
-
-// const item1 = new Task({
-//     name: "Welcome !!"
-// });
-
-// const item2 = new Task({
-//     name: "Hit the + button to add a new item"
-// });
-
-// const item3 = new Task({
-//     name: "Hit the - button to delete"
-// });
-
-// const defaultItem = [item1, item2, item3];
 
 
 app.get("/", function (req, res) {
@@ -74,8 +64,10 @@ app.get("/", function (req, res) {
 
 app.post("/", function (req, res) {
     const newtaskname = req.body.newtask;
+    const motivationtext=req.body.motivationtext || "Do not postpone"
     const item = new Task({
-        name: newtaskname
+        name: newtaskname,
+        motivation: motivationtext
     });
     item.save();
     

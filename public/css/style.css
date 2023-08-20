@@ -1,33 +1,51 @@
 html {
   background-color: #eae2f9;
-  background-image: #6863ea;
-  min-height: 1000px;
-  font-family: 'helvetica neue';
+  background-image: url("../images/bg3.jpeg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 100px;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
 }
-
 /* -webkit-linear-gradient(65deg, #A683E3 50%, #E4E9FD 50%); */
 h1 {
   color: #fff;
-  padding: 10px;
+  padding: 10px 0 0 0;
+}
+h3{
+  color: black;
+  padding: 0 0 10px 0;
 }
 
-.box {
-  max-width: 32%;
+.headingbox{
+  max-width: 50%;
   margin: 50px auto;
-  background: white;
+  border-radius: 6px;
+  box-shadow: 5px 5px 15px -5px rgba(0, 0, 0, 0.3);
+}
+
+.outerbox{
+  max-width: 50%;
+  margin: 50px auto;
+  background: rgba(255, 255, 255, 0.373);
   border-radius: 5px;
   box-shadow: 5px 5px 15px -5px rgba(0, 0, 0, 0.3);
 }
 
+.box{
+  padding: 3% 5% 3% 5%;
+}
+
+/* b28cf4 */
 #heading {
-  background-color: #915af1;
+  background-color: #a076e9;
   text-align: center;
 }
 
 .item {
   min-height: 70px;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
+  margin-top: 2%;
   border-bottom: 1px solid #F1F1F1;
 }
 
@@ -35,21 +53,33 @@ h1 {
   border-bottom: 0;
 }
 
-input:checked+p {
+/* input:checked+p {
   text-decoration: line-through;
   text-decoration-color: #915af1;
-}
+  color: #915af1;
+} */
 
 input[type="checkbox"] {
-  margin: 20px;
+  margin: 3% 3% 0 6%;
 }
 
 p {
-  margin: 0;
-  padding: 20px;
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 200;
   color: #00204a;
+}
+
+.task p.motivation {
+  margin: 0;
+  font-size: 15px;
+  font-family: cursive;
+  color: gray;
+}
+
+.box hr {
+  border: none; 
+  border-top: 1px solid #ccc; 
+  margin: 5px 0; 
 }
 
 form.item {
@@ -60,13 +90,14 @@ form.item {
 button {
   min-height: 50px;
   width: 50px;
-  border-radius: 50%;
-  border-color: transparent;
-  background-color: #915af1;
-  color: #fff;
+  text-align: center;
+  border-radius: 10%;
+  /* border-color: transparent; */
+  background-color: #dccff3;
+  /* color: #fff; */
   font-size: 30px;
-  padding-bottom: 6px;
   border-width: 0;
+  box-shadow: 5px 5px 15px -5px rgba(0, 0, 0, 0.3);
 }
 
 input[type="text"] {
@@ -77,12 +108,14 @@ input[type="text"] {
   background: transparent;
   font-size: 20px;
   font-weight: 200;
-  width: 313px;
+  width: 40%;
+  margin-right: 4%;
+  box-shadow: inset 0 -3px 0 0 #dbc4f9;
 }
 
 input[type="text"]:focus {
   outline: none;
-  box-shadow: inset 0 -3px 0 0 #915af1;
+  box-shadow: inset 0 -3px 0 0 #905beb;
 }
 
 ::placeholder {
