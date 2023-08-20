@@ -78,13 +78,17 @@ app.post("/", function (req, res) {
         name: newtaskname
     });
     item.save();
+    
     res.redirect("/");
 });
 
-// app.post("/delete", function(req, res){
-//     const checkedtaskid= req.body.checkbox;
-//     Task.findByIdAndDelete("64cc9e2d6fdcc02f25070411");
-//     // res.redirect("/");
-// });
+app.post("/del", function(req, res){
+    const checkedtaskid= req.body.checkbox;
+    Task.findByIdAndDelete(checkedtaskid)
+        .then(res.redirect("/"))
+        .catch(function (error) {
+            console.error("Error fetching tasks:", error);
+        });
+});
 
 app.listen(4000);

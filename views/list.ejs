@@ -13,7 +13,7 @@
     <div class="box">
 
         <% newtaskitem.forEach(function(task){ %>
-            <form action="/delete" method="post">
+            <form action="/del" method="post">
                 <div class="item">
                     <input type="checkbox" name="checkbox" value="<%= task._id%>" onChange="this.form.submit()">
                     <p><%= task.name %></p>
@@ -22,7 +22,7 @@
             <% }); %>
 
                 <form class="" action="/" method="post">
-                    <input type="text" name="newtask" placeholder="Enter New Task">
+                    <input type="text" name="newtask" placeholder="Enter New Task" required>
                     <button type="submit" name="submit">+</button>
                 </form>
     </div>
